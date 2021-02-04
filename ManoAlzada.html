@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <title>A mano</title>
+</head>
+<body class="bg-light">
+
+
+    <div class="navbar bg-dark container-fluid" >
+        
+        <ul class="nav nav-pills">
+                
+                <li class="nav-item"><a class="nav-link active" href="Inicio.html">Inicio</a></li>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Ejemplo</a>
+
+                    <div class="dropdown-menu" >
+                    <a class="dropdown-item" href="ManoAlzada.html">A mano</a>
+                    <a class="dropdown-item" href="Excel.html">Excel</a>
+
+                    </div>
+                </li>
+        </ul>
+    </div>
+
+
+
+    <div class="container">
+    <h1 class="display-4 py-3" align="center"> Pasos para resolver por el metodo de Dijkstra</h1>
+
+    <div align="center">
+    <figure class="figure" align="center">
+    <img src="img/dg.png" align="center" width="600" class="img-fluid" alt="Responsive image"><figcaption class="figure-caption">Grafo ejemplo</figcaption>
+    </figure>
+    </div>
+
+
+
+    <div class="row row-cols-1 row-cols-md-2">
+  <div class="col mb-4">
+    <div class="card">
+      <img src="img/imagen 1.jpg" class="card-img-top" alt="Responsive image">
+      <div class="card-body bg-body">
+        <h5 class="card-title">Primer paso</h5>
+        <p class="card-text">Para Calcular el camino más corto tenemos que apoyarnos de una tabla la cual indica el nodo antecesor y la distacia del respectivo nodo.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="img/IMAGEN-3.jpg" class="card-img-top" alt="Responsive image">
+      <div class="card-body bg-body">
+        <h5 class="card-title">Segundo y tercer paso</h5>
+        <p class="card-text">Tomaremos el nodo H, como no hay nodos anteriores a este lo colocamos con una linea en la tabla y valor del camino con 0, este nodo lo podemos marcar como definitivo.<br>Los nodos adyacentes a este son 7, 4 y 1 por lo cual lo anotaremos en la tabala de la siguiente forma.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="img/imagen 5.jpg" class="card-img-top" alt="Responsive image">
+      <div class="card-body bg-body">
+        <h5 class="card-title">Paso 4</h5>
+        <p class="card-text">Comparamos los valores en la fila de distancia y tomaremos el del menor valor, en este caso el 4 con el nodo 1 y lo marcamos como definitivo.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="img/img7.jpg" class="card-img-top" alt="Responsive image">
+      <div class="card-body bg-body">
+        <h5 class="card-title">Paso 5</h5>
+        <p class="card-text">En la tabla arrastramos los valores ya definitivos. para llegar a los nodos adyacentes seguimos la misma estructura, es decir, los nodos adyacentes son 7,4,3 y 2, llenaremos la distancia respecto al valor del nodo sumado con el nodo anterior.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="img/imagen 9.jpg" class="card-img-top" alt="Responsive image">
+      <div class="card-body bg-body">
+        <h5 class="card-title">Paso 6 y 7</h5>
+        <p class="card-text">Retomando el paso anterior, arrastramos los nodos donde ya encontramos el camino más corto. Comparando los valores en distancia tomamos el valor menor y marcamos el nodo como definitivo.<br>Teniendo al nodo H, 1 y 3 como nodos definitivos buscaremos los adyacentes tomando diferentes caminos para llegar a ellos, por ejemplo en el nodo 2 podemos llegar por el nodo 1 y 2, para el nodo 1 el valor en la distancia seria 10 mientras que en el nodo 3 al sumar el valor de los arcos seria 6 al ver el nodo 3 tiene el valor más pequeño lo tomaremos como definitivo.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="img/imagen 9.jpg" class="card-img-top" alt="Responsive image">
+      <div class="card-body bg-body">
+        <h5 class="card-title">Paso 8</h5>
+        <p class="card-text">Continuando con los pasos anteriores, tomaremos el valor más pequeño donde lo arrastraremos junto con los nodos donde ya encontramos el camino más corto y marcamos al nodo como definitivo. Volveremos a buscar los nodos adyacentes con los nodos ya definidos marcados en color azul, podremos ver que de nuevo encontraremos más de una forma para llegar a estos, pero volveremos a comparar el valor de cada uno de estos y nos quedaremos con el valor más pequeño al sumar el valor de los arcos para colocarlo en la tabla.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="img/imagen 11.jpg" class="card-img-top" alt="Responsive image">
+      <div class="card-body bg-body">
+        <h5 class="card-title">Paso 9</h5>
+        <p class="card-text">En este caso podemos ver que tenemos dos nodos con el mismo valor de 8, en este caso podemos tomar cualquiera de los dos nodos , tomaremos por ejemplo el nodo 5 marcándolo como nodo definitivo</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="img/IMAGEN 13.jpg" class="card-img-top" alt="Responsive image">
+      <div class="card-body bg-body">
+        <h5 class="card-title">Paso 10</h5>
+        <p class="card-text">Podemos ver que la mayoría de los nodos ya se marcaron definitivos en donde solo nos queda el 6 y 7 en donde volveremos a tomar el nodo menor.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="img/IMAGEN 15.jpg" class="card-img-top" alt="Responsive image">
+      <div class="card-body bg-body">
+        <h5 class="card-title">Paso 11</h5>
+        <p class="card-text">Para llegar al nodo 6 seria por el nodo 7, 4 y 5 en donde tomaremos el valor más pequeño de los      tres. Al ver que llegamos al último nodo tomaremos su antecesor, en este caso 4 e iremos al valor del nodo 4 en donde indica que su antecesor es 3, al ir al valor del nodo 3 nos indica que su antecesor es 1 y el antecesor de 1 es H, trazaremos este camino tomándolo como el camino más corto o de menor valor.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+      <img src="img/imagen 17.jpg" class="card-img-top" alt="Responsive image">
+      <div class="card-body bg-body">
+        <h5 class="card-title">Paso final</h5>
+        <p class="card-text">Una vez encontrado el camnino ás corto, se realiza el trazo.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- <h5 align="center"> 1. Para Calcular el camino más corto tenemos que apoyarnos de una tabla la cual indica el nodo antecesor y la distacia del respectivo nodo.</h5>
+    <p align="center">  <img src="imagen 1.jpg" width="600" class="img-fluid" height="300" alt="Responsive image"></p>
+
+    <h5 align="center"> 2. Tomaremos el nodo H, como no hay nodos anteriores a este lo colocamos con una linea en la tabla y valor del camino con 0, este nodo lo podemos marcar como definitivo.</h5>
+    <h5 align="center"> 3. Los nodos adyacentes a este son 7, 4 y 1 por lo cual lo anotaremos en la tabala de la siguiente forma.</h5>
+    <p align="center">  <img src="IMAGEN-3.jpg" width="600" class="img-fluid" height="300" alt="Responsive image"></p>
+
+    <h5 align="center"> 4. Comparamos los valores en la fila de distancia y tomaremos el del menor valor, en este caso el 4 con el nodo 1 y lo marcamos como definitivo.</h5>
+    <p align="center">  <img src="imagen 5.jpg" width="600" class="img-fluid" height="300" alt="Responsive image"></p>
+
+    <h5 align="center"> 5.	En la tabla arrastramos los valores ya definitivos. para llegar a los nodos adyacentes seguimos la misma estructura, es decir, los nodos adyacentes son 7,4,3 y 2, llenaremos la distancia respecto al valor del nodo sumado con el nodo anterior.</h5>
+    <p align="center">  <img src="img7.jpg" width="600" class="img-fluid" height="300" alt="Responsive image"></p>
+
+
+    <h5 align="center">
+        6.	Retomando el paso anterior, arrastramos los nodos donde ya encontramos el camino más corto. Comparando los valores en distancia tomamos el valor menor y marcamos el nodo como definitivo.</h5>
+    <h5 align="center">
+        7.	Teniendo al nodo H, 1 y 3 como nodos definitivos buscaremos los adyacentes tomando diferentes caminos para llegar a ellos, por ejemplo en el nodo 2 podemos llegar por el nodo 1 y 2, para el nodo 1 el valor en la distancia seria 10 mientras que en el nodo 3 al sumar el valor de los arcos seria 6 al ver el nodo 3 tiene el valor más pequeño lo tomaremos como definitivo.</h5>
+    <p align="center">  <img src="imagen 9.jpg" width="600" class="img-fluid" height="300" alt="Responsive image"></p>
+
+
+    <h5 align="center">
+        8.	Retomando los pasos anteriores, tomaremos el valor más pequeño donde lo arrastraremos junto con los nodos donde ya encontramos el camino más corto y marcamos al nodo como definitivo. Volveremos a buscar los nodos adyacentes con los nodos ya definidos marcados en color azul, podremos ver que de nuevo encontraremos más de una forma para llegar a estos, pero volveremos a comparar el valor de cada uno de estos y nos quedaremos con el valor más pequeño al sumar el valor de los arcos para colocarlo en la tabla.
+    </h5>
+    <p align="center">  <img src="imagen 9.jpg" width="600" class="img-fluid" height="300" alt="Responsive image"></p>
+
+
+    <h5 align="center"> 9.	En este caso podemos ver que tenemos dos nodos con el mismo valor de 8, en este caso podemos tomar cualquiera de los dos nodos , tomaremos por ejemplo el nodo 5 marcándolo como nodo definitivo</h5>
+    <p align="center">  <img src="imagen 11.jpg" width="600" class="img-fluid" height="300" alt="Responsive image"></p>
+
+
+    <h5 align="center"> 10.	Podemos ver que la mayoría de los nodos ya se marcaron definitivos en donde solo nos queda el 6 y 7 en donde volveremos a tomar el nodo menor.</h5>
+    <p align="center">  <img src="IMAGEN 13.jpg" width="600" class="img-fluid" height="300" alt="Responsive image"></p>
+
+
+    <h5 align="center"> 11.	Para llegar al nodo 6 seria por el nodo 7, 4 y 5 en donde tomaremos el valor más pequeño de los      tres. Al ver que llegamos al último nodo tomaremos su antecesor, en este caso 4 e iremos al valor del nodo 4 en donde indica que su antecesor es 3, al ir al valor del nodo 3 nos indica que su antecesor es 1 y el antecesor de 1 es H, trazaremos este camino tomándolo como el camino más corto o de menor valor.</h5>
+    <p align="center">  <img src="IMAGEN 15.jpg" width="600" class="img-fluid" height="300" alt="Responsive image"></p>
+    <p align="center">  <img src="imagen 17.jpg" width="600" class="img-fluid" height="300" alt="Responsive image"></p>
+    </div>-->
+
+
+    <script type="text/javascript" src="js/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>
